@@ -1,16 +1,23 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $bulan = $_GET['bulan'] ?? date('m');
 $tahun = $_GET['tahun'] ?? date('Y');
 
 // koneksi database
-$conn = new mysqli('localhost','root','','bot_telegram');
+$conn = new mysqli('localhost', 'donsalan_donsalan', 'Dons200903', 'donsalan_pelanggan');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 // Ambil data berdasarkan filter
-$stmt = $conn->prepare("SELECT * FROM pelanggan WHERE MONTH(waktu_input) = ? AND YEAR(waktu_input) = ? ORDER BY waktu_input DESC");
+$stmt = $conn->prepare("SELECT nama, alamat, nik, nomor_hp, paket, sales, teknisi, status, user_pppoe, port, index_rx, rx, sn, waktu_input, waktu_respon FROM pelanggan WHERE MONTH(waktu_input) = ? AND YEAR(waktu_input) = ? ORDER BY waktu_input DESC");
 $stmt->bind_param("ss", $bulan, $tahun);
 $stmt->execute();
-$result = $stmt->get_result();
+$stmt->store_result();
+
+$stmt->bind_result($nama, $alamat, $nik, $nomor_hp, $paket, $sales, $teknisi, $status, $user_pppoe, $port, $index_rx, $rx, $sn, $waktu_input, $waktu_respon);
 
 // Set header untuk Excel
 header("Content-Type: application/vnd.ms-excel");
@@ -40,24 +47,24 @@ echo "<tr>
       </tr>";
 
 $no = 1;
-while ($row = $result->fetch_assoc()) {
+while ($stmt->fetch()) {
     echo "<tr>
             <td>{$no}</td>
-            <td>{$row['nama']}</td>
-            <td>{$row['alamat']}</td>
-            <td>{$row['nik']}</td>
-            <td>{$row['nomor_hp']}</td>
-            <td>{$row['paket']}</td>
-            <td>{$row['sales']}</td>
-            <td>{$row['teknisi']}</td>
-            <td>{$row['status']}</td>
-            <td>{$row['user_pppoe']}</td>
-            <td>{$row['port']}</td>
-            <td>{$row['index_rx']}</td>
-            <td>{$row['rx']}</td>
-            <td>{$row['sn']}</td>
-            <td>{$row['waktu_input']}</td>
-            <td>{$row['waktu_respon']}</td>
+            <td>{$nama}</td>
+            <td>{$alamat}</td>
+            <td>{$nik}</td>
+            <td>{$nomor_hp}</td>
+            <td>{$paket}</td>
+            <td>{$sales}</td>
+            <td>{$teknisi}</td>
+            <td>{$status}</td>
+            <td>{$user_pppoe}</td>
+            <td>{$port}</td>
+            <td>{$index_rx}</td>
+            <td>{$rx}</td>
+            <td>{$sn}</td>
+            <td>{$waktu_input}</td>
+            <td>{$waktu_respon}</td>
           </tr>";
     $no++;
 }
