@@ -65,7 +65,7 @@ if ($stmt->execute()) {
              . "TEKNISI = $teknisi\n"
              . "STATUS = PENDING ❗\n"
              . "Mohon Ditunggu Admin Segera Merespon ❗❗❗ \n"
-             ."<a href='https://e.ebilling.id:2053/billing/'>🔗 Buka Halaman Admin</a>";
+             ."<a href='http://10.10.200.15/bot_telegram/admin/login.php'>🔗 Buka Halaman Admin</a>";
 
     kirimTelegram($message);
 
