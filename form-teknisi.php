@@ -73,10 +73,6 @@
                     <label class="form-check-label" for="teknisiC">Odong</label>
                     </div>
                     <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="teknisi[]" value="Adi" id="teknisiC">
-                    <label class="form-check-label" for="teknisiC">Adi</label>
-                    </div>
-                    <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="teknisi[]" value="Dirman" id="teknisiC">
                     <label class="form-check-label" for="teknisiC">Dirman</label>
                     </div>
