@@ -15,7 +15,7 @@ $tahun_filter = $_GET['tahun'] ?? date('Y'); // default: tahun sekarang
 
 
 // koneksi
-$conn = new mysqli('localhost','root','','bot_telegram');
+$conn = new mysqli('localhost','root','jhon102017','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 $sql = "SELECT * FROM pelanggan 

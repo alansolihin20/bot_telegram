@@ -2,7 +2,7 @@
 // config/db.php (koneksi)
 $host = 'localhost';
 $user = 'root';
-$pass = '';
+$pass = 'jhon102017';
 $dbname = 'bot_telegram';
 
 $conn = new mysqli($host, $user, $pass, $dbname);

@@ -5,7 +5,7 @@ if (empty($_SESSION['admin_logged_in'])) {
     exit;
 }
 
-$conn = new mysqli('localhost','root','','bot_telegram');
+$conn = new mysqli('localhost','root','jhon102017','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 $id = intval($_GET['id'] ?? 0);

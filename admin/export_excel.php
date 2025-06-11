@@ -8,7 +8,7 @@ $bulan = $_GET['bulan'] ?? date('m');
 $tahun = $_GET['tahun'] ?? date('Y');
 
 // koneksi database
-$conn = new mysqli('localhost', 'donsalan_donsalan', 'Dons200903', 'donsalan_pelanggan');
+$conn = new mysqli('localhost','root','jhon102017','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 // Ambil data berdasarkan filter
