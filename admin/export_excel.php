@@ -52,7 +52,7 @@ while ($stmt->fetch()) {
             <td>{$no}</td>
             <td>{$nama}</td>
             <td>{$alamat}</td>
-            <td>{$nik}</td>
+            <td>{. $nik .}</td>
             <td>{$nomor_hp}</td>
             <td>{$paket}</td>
             <td>{$sales}</td>
