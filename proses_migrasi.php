@@ -10,6 +10,9 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Fungsi kirim ke Telegram
 function kirimTelegram($message) {
     $token = '5757704421:AAESrEhh2LixuySoaI7S65waZBYuX4LEFKY'; // ganti dengan token bot kamu
