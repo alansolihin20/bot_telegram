@@ -69,6 +69,12 @@ $result_migrasi = $conn->query($sql_migrasi);
   <button type="submit" class="btn btn-primary">Tampilkan</button>
 </form>
 
+<?php if (!empty($bulan_filter) && !empty($tahun_filter)): ?>
+  <a href="export_excel.php?bulan=<?= $bulan_filter ?>&tahun=<?= $tahun_filter ?>" class="btn btn-success mb-3">
+    Export to Excel
+  </a>
+<?php endif; ?>
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
