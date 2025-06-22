@@ -15,13 +15,19 @@ $tahun_filter = $_GET['tahun'] ?? date('Y'); // default: tahun sekarang
 
 
 // koneksi
-$conn = new mysqli('localhost','root','jhon102017','bot_telegram');
+$conn = new mysqli('localhost','root','','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 $sql = "SELECT * FROM pelanggan 
         WHERE MONTH(waktu_input) = '$bulan_filter' 
         AND YEAR(waktu_input) = '$tahun_filter' 
         ORDER BY waktu_input DESC";
+// Ambil data migrasi
+$sql_migrasi = "SELECT * FROM migrasi  WHERE MONTH(waktu_input) = '$bulan_filter' 
+        AND YEAR(waktu_input) = '$tahun_filter' 
+        ORDER BY waktu_input DESC";
+$result_migrasi = $conn->query($sql_migrasi);
+
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -76,6 +82,12 @@ $result = $conn->query($sql);
   </a>
 <?php endif; ?>
 
+  <a href="migrasi/index-migrasi.php" class="btn btn-warning mb-3">
+    DATA MIGRASI
+  </a>
+  <a href="psbVoucher/index-voucher.php" class="btn btn-primary mb-3">
+    DATA PSB VOUCHER
+  </a>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -120,6 +132,9 @@ $result = $conn->query($sql);
         <?php endif; ?>
       </tbody>
     </table>
+
+
+
 
     <a href="logout.php" class="btn btn-danger">Log Out</a>
 
