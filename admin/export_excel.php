@@ -52,7 +52,7 @@ while ($stmt->fetch()) {
             <td>{$no}</td>
             <td>{$nama}</td>
             <td>{$alamat}</td>
-            <td>{. $nik .}</td>
+            <td style=\"mso-number-format:'\\@';\">{$nik}</td>
             <td>{$nomor_hp}</td>
             <td>{$paket}</td>
             <td>{$sales}</td>
@@ -68,6 +68,7 @@ while ($stmt->fetch()) {
           </tr>";
     $no++;
 }
+
 
 echo "</table>";
 
