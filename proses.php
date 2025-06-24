@@ -41,17 +41,18 @@ $nik = $_POST['nik'] ?? '';
 $nomor_hp = $_POST['nomor_hp'] ?? '';
 $paket = $_POST['paket'] ?? '';
 $sales = $_POST['sales'] ?? '';
+$kode_wil = $_POST['kode_wil'] ?? '';
 $teknisi_arr = $_POST['teknisi'] ?? [];
 $teknisi = implode(', ', $teknisi_arr);
 
 // Validasi sederhana
-if (!$nama || !$alamat || !$nik || !$nomor_hp || !$paket || !$sales || !$teknisi) {
+if (!$nama || !$alamat || !$nik || !$nomor_hp || !$paket || !$sales || !$teknisi || !$kode_wil) {
     die("Semua data wajib diisi.");
 }
 
 // Simpan ke database
 $stmt = $conn->prepare("INSERT INTO pelanggan (nama, alamat, nik, nomor_hp, paket, sales, teknisi) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssss", $nama, $alamat, $nik, $nomor_hp, $paket, $sales, $teknisi);
+$stmt->bind_param("ssssssss", $nama, $alamat, $nik, $nomor_hp, $paket, $sales, $kode_wil, $teknisi);
 
 if ($stmt->execute()) {
     // Kirim notifikasi ke Telegram
@@ -62,6 +63,7 @@ if ($stmt->execute()) {
              . "NO HP = $nomor_hp\n"
              . "PAKET = $paket\n"
              . "SALES = $sales\n"
+             . "KODE WILAYAH = $kode_wil\n"
              . "TEKNISI = $teknisi\n"
              . "STATUS = PENDING ❗\n"
              . "Mohon Ditunggu Admin Segera Merespon ❗❗❗ \n"

@@ -58,6 +58,25 @@
                 <label for="sales" class="form-label">Sales</label>
                 <input type="text" class="form-control" id="sales" name="sales" required />
               </div>
+                <div class="mb-3">
+                <label for="kode_wil" class="form-label">Kode WILAYAH</label>
+                <select class="form-select" id="kode_wil" name="kode_wil" required>
+                  <option value="" selected disabled>Pilih Kode Wilayah</option>
+                  <option value="PL">(PL)-PALALALANGON</option>
+                  <option value="PM">(PM)-PASIR MENJUL</option>
+                  <option value="CPT">(CPT)-CIPETIR</option>
+                  <option value="BT">(BT)-BENTENG</option>
+                  <option value="CBR">(CBR)-CIBURAYUT</option>
+                  <option value="BT">(BMI)-PERUM BMI</option>
+                  <option value="CGG">(CGG)-CIENGGONG</option>
+                  <option value="CJB">(CJB)-CIJAMBU</option>
+                  <option value="BBC-A">(BBC-A)-BBC-ADI</option>
+                  <option value="BBC-D">(BBC-D)-BBC-DIRMAN</option>
+                  <option value="BKN">(BKN)-BABAKAN</option>
+                  <option value="CBG">(CBG)-CIBOGO</option>
+                  <option value="CGB">(CGB)-CIGOMBONG</option>
+                </select>
+              </div>
               <div class="mb-3">
                 <label class="form-label">Teknisi</label>
                 <div class="form-check"><input class="form-check-input" type="checkbox" name="teknisi[]" value="Iman"> Iman</div>

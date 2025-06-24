@@ -72,7 +72,7 @@ if ($stmt->execute()) {
                  . "INDEX: $index_rx\n"
                  . "RX: $rx\n"
                  . "SN BARU: $sn_baru\n"
-                 . "STATUS: ✅ VOUCHER BERHASIL DIKONFIGURASI";
+                 . "STATUS: ✅ BERHASIL DIKONFIGURASI";
 
         kirimTelegram($message);
     }

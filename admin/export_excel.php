@@ -17,7 +17,7 @@ $stmt->bind_param("ss", $bulan, $tahun);
 $stmt->execute();
 $stmt->store_result();
 
-$stmt->bind_result($nama, $alamat, $nik, $nomor_hp, $paket, $sales, $teknisi, $status, $user_pppoe, $port, $index_rx, $rx, $sn, $waktu_input, $waktu_respon);
+$stmt->bind_result($nama, $alamat, $nik, $nomor_hp, $paket, $sales, $teknisi, $status, $user_pppoe, $port, $index_rx, $rx, $sn, $waktu_input, $waktu_respon, $kode_wil);
 
 // Set header untuk Excel
 header("Content-Type: application/vnd.ms-excel");
@@ -35,6 +35,7 @@ echo "<tr>
         <th>No HP</th>
         <th>Paket</th>
         <th>Sales</th>
+        <th>Kode Wilayah</th>
         <th>Teknisi</th>
         <th>Status</th>
         <th>PPPoE</th>
@@ -56,6 +57,7 @@ while ($stmt->fetch()) {
             <td>{$nomor_hp}</td>
             <td>{$paket}</td>
             <td>{$sales}</td>
+            <td>{$kode_wil}</td>
             <td>{$teknisi}</td>
             <td>{$status}</td>
             <td>{$user_pppoe}</td>

@@ -44,7 +44,7 @@ if ($stmt->execute()) {
     $res = $conn->query("SELECT pppoe, alamat, sn_lama, sn_baru FROM migrasi WHERE id = $id");
     $row = $res->fetch_assoc();
 
-    $message = "<b>Respon Migrasi/Perubahan</b>\n"
+    $message = "<b>Respon Migrasi/Ganti Alat</b>\n"
              . "PPPOE = {$row['pppoe']}\n"
              . "ALAMAT = {$row['alamat']}\n"
              . "SN LAMA = {$row['sn_lama']}\n"
