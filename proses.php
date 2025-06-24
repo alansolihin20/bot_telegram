@@ -51,7 +51,7 @@ if (!$nama || !$alamat || !$nik || !$nomor_hp || !$paket || !$sales || !$teknisi
 }
 
 // Simpan ke database
-$stmt = $conn->prepare("INSERT INTO pelanggan (nama, alamat, nik, nomor_hp, paket, sales, teknisi) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO pelanggan (nama, alamat, nik, nomor_hp, paket, sales, kode_wil, teknisi) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssssss", $nama, $alamat, $nik, $nomor_hp, $paket, $sales, $kode_wil, $teknisi);
 
 if ($stmt->execute()) {
