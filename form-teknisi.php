@@ -49,7 +49,9 @@
                 <select class="form-select" id="paket" name="paket" required>
                   <option value="" selected disabled>Pilih Paket</option>
                   <option value="5MBPS">5-MBPS</option>
+                  <option value="5MBPS-150">5-MBPS-150</option>
                   <option value="7MBPS">7-MBPS</option>
+                  <option value="7MBPS-200">7-MBPS-200</option>
                   <option value="10MBPS">10-MBPS</option>
                   <option value="20MBPS">20-MBPS</option>
                 </select>
@@ -75,6 +77,9 @@
                   <option value="BKN">(BKN)-BABAKAN</option>
                   <option value="CBG">(CBG)-CIBOGO</option>
                   <option value="CGB">(CGB)-CIGOMBONG</option>
+                  <option value="CBB">(CBB)-CIBEBER</option>
+                  <option value="PSJ">(PSJ)-PASIR JAWA</option>
+                  <option value="CSP">(CSP)-CISEMPUR</option>
                 </select>
               </div>
               <div class="mb-3">
