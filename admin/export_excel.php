@@ -12,7 +12,7 @@ $conn = new mysqli('localhost','root','jhon102017','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 // Ambil data berdasarkan filter
-$stmt = $conn->prepare("SELECT nama, alamat, nik, nomor_hp, paket, sales, teknisi, status, user_pppoe, port, index_rx, rx, sn, waktu_input, waktu_respon FROM pelanggan WHERE MONTH(waktu_input) = ? AND YEAR(waktu_input) = ? ORDER BY waktu_input DESC");
+$stmt = $conn->prepare("SELECT nama, alamat, nik, nomor_hp, paket, sales, teknisi, status, user_pppoe, port, index_rx, rx, sn, waktu_input, waktu_respon, kode_wil FROM pelanggan WHERE MONTH(waktu_input) = ? AND YEAR(waktu_input) = ? ORDER BY waktu_input DESC");
 $stmt->bind_param("ss", $bulan, $tahun);
 $stmt->execute();
 $stmt->store_result();
