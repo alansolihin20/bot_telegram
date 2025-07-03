@@ -18,7 +18,7 @@ $data = $result->fetch_assoc();
 
 
 function kirimTelegram($message) {
-    $token = '5757704421:AAESrEhh2LixuySoaI7S65waZBYuX4LEFKY'; // ganti token bot kamu
+    $token = '8028787353:AAEpc57hz-AD1Ba3d2SfImEVv9ib-QKQX3E'; // ganti token bot kamu
     $chat_id = '-4949356523'; // ganti chat_id grup kamu
 
     $url = "https://api.telegram.org/bot$token/sendMessage";

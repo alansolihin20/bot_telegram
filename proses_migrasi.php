@@ -15,7 +15,7 @@ ini_set('display_errors', 1);
 
 // Fungsi kirim ke Telegram
 function kirimTelegram($message) {
-    $token = '5757704421:AAESrEhh2LixuySoaI7S65waZBYuX4LEFKY'; // ganti dengan token bot kamu
+    $token = '8028787353:AAEpc57hz-AD1Ba3d2SfImEVv9ib-QKQX3E'; // ganti dengan token bot kamu
     $chat_id = '-4949356523';
 
     $url = "https://api.telegram.org/bot$token/sendMessage";

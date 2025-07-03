@@ -3,7 +3,7 @@ $conn = new mysqli('localhost','root','jhon102017','bot_telegram');
 if ($conn->connect_error) die("Koneksi gagal: " . $conn->connect_error);
 
 function kirimTelegram($message) {
-    $token = '5757704421:AAESrEhh2LixuySoaI7S65waZBYuX4LEFKY'; // Ganti dengan token bot kamu
+    $token = '8028787353:AAEpc57hz-AD1Ba3d2SfImEVv9ib-QKQX3E'; // Ganti dengan token bot kamu
     $chat_id = '-4949356523'; // Ganti dengan chat id grup kamu
 
     $url = "https://api.telegram.org/bot$token/sendMessage";

@@ -17,7 +17,7 @@ if ($result->num_rows == 0) die("Data migrasi tidak ditemukan.");
 $data = $result->fetch_assoc();
 
 function kirimTelegram($message) {
-    $token = '5757704421:AAESrEhh2LixuySoaI7S65waZBYuX4LEFKY';
+    $token = '8028787353:AAEpc57hz-AD1Ba3d2SfImEVv9ib-QKQX3E';
     $chat_id = '-4949356523';
 
     $url = "https://api.telegram.org/bot$token/sendMessage";

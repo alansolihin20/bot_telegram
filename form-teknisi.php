@@ -73,6 +73,7 @@
                   <option value="CGG">(CGG)-CIENGGONG</option>
                   <option value="CJB">(CJB)-CIJAMBU</option>
                   <option value="LN">(LN)-LEGOK-NENGGO</option>
+                  <option value="BBC">(BBC)-BABAKAN-CIPULUS</option>
                   <option value="BBC-A">(BBC-A)-BBC-ADI</option>
                   <option value="BBC-D">(BBC-D)-BBC-DIRMAN</option>
                   <option value="BKN">(BKN)-BABAKAN</option>
